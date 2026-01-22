@@ -1,1 +1,394 @@
-<html><body>test ok</body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギター練習スケジュール</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .day-card {
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-card.thursday {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-left-color: #667eea;
+        }
+
+        .day-card.friday {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-left-color: #f5576c;
+        }
+
+        .day-card.saturday {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-left-color: #00f2fe;
+        }
+
+        .day-card.sunday {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            border-left-color: #43e97b;
+        }
+
+        .day-header {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .practice-time {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .point {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 10px 0 0 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .point strong {
+            color: #ff6b6b;
+        }
+
+        .encouragement {
+            background: linear-gradient(135deg, #ffe1a1 0%, #ffd89b 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #ffb347;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin: 0 5px;
+        }
+
+        .legend {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid #dee2e6;
+        }
+
+        .legend h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .legend-item {
+            display: inline-block;
+            margin-right: 30px;
+            margin-bottom: 10px;
+        }
+
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .color-thursday {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .color-friday {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .color-saturday {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .color-sunday {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">🎸</span>クラシックギター練習スケジュール<span class="emoji">🎸</span></h1>
+        <p class="subtitle">2026年1月22日（木）〜1月25日（日） | 中級者向け</p>
+
+        <div class="schedule-grid">
+            <!-- 1月22日（木） -->
+            <div class="day-card thursday">
+                <div class="day-header">
+                    <span>1月22日（木）</span>
+                    <span class="practice-time">1.5時間</span>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">基礎練習（30分）</div>
+                    <div class="section-content">
+                        • アルペジオ 10分（重点、右手弧）: 60BPM 3変奏クリア<br>
+                        • トレモロ 5分: 均等8小節<br>
+                        • スケール 5分: メジャースケール<br>
+                        • 和音 5分: 基本形シフト<br>
+                        • 譜読み 5分: 新譜1ページ
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">曲練習（50分）</div>
+                    <div class="section-content">
+                        • デュオ（ラニエリ）20分: 通し録音<br>
+                        • デュオ（マルチェリ）20分: 通し録音<br>
+                        • 歌と踊り 10分: 苦手フレーズ3回連続
+                    </div>
+                </div>
+
+                <div class="point">
+                    <strong>今日のポイント:</strong> 録音でリズムずれ確認（自動操縦脱却）
+                </div>
+
+                <div class="encouragement">
+                    <span class="emoji">💪</span> 新しい週の始まり！ 今日から本気の意図的練習がスタート。基礎をしっかり固め、曲に活かす準備をしましょう。あなたなら必ずできます！ <span class="emoji">💪</span>
+                </div>
+            </div>
+
+            <!-- 1月23日（金） -->
+            <div class="day-card friday">
+                <div class="day-header">
+                    <span>1月23日（金）</span>
+                    <span class="practice-time">1.5時間</span>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">基礎練習（30分）</div>
+                    <div class="section-content">
+                        • アルペジオ 10分（重点）: 70BPM続き<br>
+                        • トレモロ 5分<br>
+                        • スケール 5分: クロマチック<br>
+                        • 和音 5分: 拡張形<br>
+                        • 譜読み 5分
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">曲練習（50分）</div>
+                    <div class="section-content">
+                        • デュオ（ラニエリ）20分: テンポアップ<br>
+                        • デュオ（マルチェリ）20分: テンポアップ<br>
+                        • 歌と踊り 10分: 通し
+                    </div>
+                </div>
+
+                <div class="point">
+                    <strong>今日のポイント:</strong> SMART目標設定（例: ±5%リズム精度）
+                </div>
+
+                <div class="encouragement">
+                    <span class="emoji">🌟</span> 昨日の記録を振り返って、今日は1段階上へ！ テンポアップでデュオの相手にも応える気持ちで。その小さな努力が必ず報われます。 <span class="emoji">🌟</span>
+                </div>
+            </div>
+
+            <!-- 1月24日（土） -->
+            <div class="day-card saturday">
+                <div class="day-header">
+                    <span>1月24日（土）</span>
+                    <span class="practice-time">3時間</span>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">基礎練習（60分）</div>
+                    <div class="section-content">
+                        • アルペジオ 20分（重点）<br>
+                        • トレモロ 10分<br>
+                        • スケール 10分<br>
+                        • 和音 10分<br>
+                        • 譜読み 10分
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">曲練習（120分）</div>
+                    <div class="section-content">
+                        • 歌と踊り 40分: ダイナミクス重点<br>
+                        • アルモニア 30分: 和声通し<br>
+                        • パッサカリア 30分: 変奏研究<br>
+                        • デュオ復習 20分
+                    </div>
+                </div>
+
+                <div class="point">
+                    <strong>今日のポイント:</strong> ロール和音でバロック表現（Weiss風）。低音明確に、上声は分散で色彩豊か に！
+                </div>
+
+                <div class="encouragement">
+                    <span class="emoji">✨</span> 休日は長時間練習のチャンス！ 複数の曲に触れることで、視点が広がり、表現力が深まります。疲れたら少し休んで、でも最後まで頑張ってください！ <span class="emoji">✨</span>
+                </div>
+            </div>
+
+            <!-- 1月25日（日） -->
+            <div class="day-card sunday">
+                <div class="day-header">
+                    <span>1月25日（日）</span>
+                    <span class="practice-time">3時間</span>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">基礎練習（60分）</div>
+                    <div class="section-content">
+                        • アルペジオ 20分（重点統合）<br>
+                        • トレモロ 10分<br>
+                        • スケール 10分<br>
+                        • 和音 10分<br>
+                        • 譜読み 10分
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">曲練習（120分）</div>
+                    <div class="section-content">
+                        • 歌と踊り 45分: 本番シミュ3回<br>
+                        • アルモニア 30分: ハーモニクス精度<br>
+                        • パッサカリア 30分: コントラスト強調<br>
+                        • デュオ通し 15分
+                    </div>
+                </div>
+
+                <div class="point">
+                    <strong>今日のポイント:</strong> 新曲検討（簡単エチュード、余裕で）+ 総録音レビュー。この1週間の成長を感じて！
+                </div>
+
+                <div class="encouragement">
+                    <span class="emoji">🎯</span> 週の最後！ 本番シミュで心の準備をしながら、このスケジュールを終了します。4日間の頑張りを自分で褒めてください。来週も同じ気合いで進もう！ <span class="emoji">🎯</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <h3>📋 スケジュール凡例</h3>
+            <div class="legend-item">
+                <span class="legend-color color-thursday"></span>
+                <strong>平日（木・金）:</strong> 1.5時間（基礎30分 + 曲50分）
+            </div>
+            <div class="legend-item">
+                <span class="legend-color color-saturday"></span>
+                <strong>休日（土・日）:</strong> 3時間（基礎60分 + 曲120分）
+            </div>
+            <div style="width: 100%; margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
+                <p style="color: #333; margin-bottom: 10px;"><strong>💡 実践のコツ:</strong></p>
+                <ul style="color: #555; margin-left: 20px; line-height: 1.8;">
+                    <li>毎回の練習を録音して、客観的に聴き返す（自動操縦脱却）</li>
+                    <li>苦手フレーズは「3回連続クリア」で次へ進む</li>
+                    <li>デュオは本番を想定して通し練習</li>
+                    <li>「歌と踊り」は毎日重点で、2月末完成を目指す</li>
+                    <li>基礎は不変だが、速度や難度を徐々にアップ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
