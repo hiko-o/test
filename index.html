@@ -4,437 +4,932 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>2月ギター練習スケジュール（2/1-2/7）</title>
+    <title>ギター練習スケジュール 2/8-2/14</title>
     <style>
+        :root {
+            --color-primary: #0284c7;
+            --color-primary-hover: #0370b9;
+            --color-text: #0f172a;
+            --color-text-light: #64748b;
+            --color-bg: #f8fafc;
+            --color-surface: #ffffff;
+            --color-border: #e2e8f0;
+            --color-accent-chaconne: #dc2626;
+            --color-accent-song: #7c3aed;
+            --color-accent-ranieri: #059669;
+            --color-accent-marcelli: #d97706;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: "Segoe UI", "Helvetica Neue", sans-serif, "ヒラギノ角ゴ Pro";
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
             padding: 20px;
-            min-height: 100vh;
         }
-        
+
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        
-        .header {
-            background: white;
-            padding: 30px;
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #0284c7 0%, #0370b9 100%);
+            color: white;
+            padding: 30px 20px;
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin: 5px 0;
+        }
+
+        .strategy-section {
+            background: var(--color-surface);
+            border-left: 4px solid var(--color-primary);
+            padding: 25px;
             margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .strategy-section h2 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .strategy-card {
+            background: var(--color-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .strategy-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .strategy-card ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        .strategy-card li {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .daily-schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .day-card {
+            background: var(--color-surface);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .day-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+            color: white;
+            padding: 20px;
             text-align: center;
         }
-        
-        .header h1 {
-            color: #333;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        
-        .header p {
-            color: #666;
-            line-height: 1.8;
-            margin: 10px 0;
-            font-size: 14px;
-        }
-        
-        .summary {
-            background: #f8f9ff;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        
-        .summary-title {
-            font-weight: bold;
-            color: #333;
+
+        .day-header h3 {
+            font-size: 1.3em;
             margin-bottom: 8px;
         }
-        
-        .summary-text {
-            color: #555;
-            font-size: 13px;
-            line-height: 1.7;
+
+        .day-header p {
+            font-size: 0.9em;
+            opacity: 0.9;
         }
-        
-        .day-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
+
+        .day-content {
+            padding: 20px;
+        }
+
+        .practice-session {
             margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-top: 5px solid;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-border);
         }
-        
-        .day-card.weekday {
-            border-top-color: #667eea;
+
+        .practice-session:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
-        
-        .day-card.weekend {
-            border-top-color: #f093fb;
-        }
-        
-        .day-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .day-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .time-badge {
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .weekend .time-badge {
-            background: #f093fb;
-        }
-        
-        .event-badge {
-            background: #ff6b6b;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 11px;
-            margin-left: 10px;
-            font-weight: bold;
-        }
-        
-        .practice-section {
-            margin: 15px 0;
-        }
-        
-        .section-title {
-            font-weight: bold;
-            color: #667eea;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+
+        .piece-title {
+            font-size: 1.1em;
+            font-weight: 600;
             margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        .weekend .section-title {
-            color: #f093fb;
+
+        .piece-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: white;
         }
-        
-        .content {
-            background: #f8f9ff;
+
+        .badge-chaconne {
+            background-color: var(--color-accent-chaconne);
+        }
+
+        .badge-song {
+            background-color: var(--color-accent-song);
+        }
+
+        .badge-ranieri {
+            background-color: var(--color-accent-ranieri);
+        }
+
+        .badge-marcelli {
+            background-color: var(--color-accent-marcelli);
+        }
+
+        .session-detail {
+            background: var(--color-bg);
             padding: 12px;
             border-radius: 6px;
-            font-size: 13px;
-            line-height: 1.8;
-            color: #444;
+            margin-top: 8px;
+            font-size: 0.95em;
+            line-height: 1.5;
         }
-        
-        .weekend .content {
-            background: #fff9fd;
+
+        .detail-row {
+            margin: 8px 0;
+            display: flex;
+            gap: 10px;
         }
-        
-        .tips {
-            background: #fffbea;
-            border-left: 3px solid #ffc107;
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--color-primary);
+            min-width: 80px;
+        }
+
+        .detail-content {
+            flex: 1;
+            color: var(--color-text);
+        }
+
+        .tips-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
             padding: 12px;
-            margin-top: 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #333;
-        }
-        
-        .encouragement {
-            background: #e8f5e9;
-            border-left: 3px solid #4caf50;
-            padding: 12px;
+            border-radius: 6px;
             margin-top: 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #2e7d32;
-            font-weight: 500;
+            font-size: 0.9em;
         }
-        
-        .footer {
-            background: white;
+
+        .tips-box strong {
+            color: #b45309;
+        }
+
+        .mindset-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--color-primary);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .mindset-box strong {
+            color: var(--color-primary);
+        }
+
+        .daily-message {
+            background: var(--color-surface);
+            border-left: 4px solid var(--color-primary);
             padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .daily-message h4 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .weekly-summary {
+            background: var(--color-surface);
+            border: 2px solid var(--color-primary);
+            padding: 25px;
+            margin-top: 30px;
             border-radius: 12px;
             text-align: center;
-            color: #999;
-            font-size: 12px;
-            margin-top: 30px;
+        }
+
+        .weekly-summary h2 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .weekly-summary p {
+            font-size: 1em;
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .time-info {
+            font-size: 0.85em;
+            color: var(--color-text-light);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .daily-schedule {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>🎸 2月ギター練習スケジュール</h1>
-            <p><strong>期間：2月1日(日)～2月7日(土)</strong></p>
-            <p>平日1.5時間、週末3時間で、シャコンヌ・歌と踊り・デュオの3曲完成へ</p>
-        </div>
-        
-        <div class="summary">
-            <div class="summary-title">📋 2月の練習方向性</div>
-            <div class="summary-text">
-                <p><strong>優先順位：</strong>2/22シャコンヌMC、2/28発表会（歌/ラニエリ/マルチェリ）の2イベント完成が絶対。時間の80%を配分。</p>
-                <p style="margin-top: 10px;"><strong>各曲の課題：</strong></p>
-                <ul style="margin-left: 20px; margin-top: 5px;">
-                    <li>歌と踊り：テンポ（遅め→本番80%）と集中力持続（ミス/リズム甘さ）→ メトロノーム区切り、5分チャンク</li>
-                    <li>シャコンヌ：2年ぶり復習＋運指見直し・装飾音 → MuseScore修正＋スロー分解毎日</li>
-                    <li>デュオ：ラニエリはミス慣れ、マルチェリはアドリブ/ラスゲアード追加 → 通し録音＋相手要望即対応</li>
-                </ul>
-                <p style="margin-top: 10px;"><strong>基礎継続：</strong>アルペジオ10m・スラー5m・トレモロ5m毎日必須で技術基盤維持。</p>
-                <p style="margin-top: 10px;"><strong>進捗追跡：</strong>毎日録音レビュー、SMART目標（テンポ±5%、ミス0）で自動操縦回避。</p>
-            </div>
-        </div>
-        
-        <!-- 2月1日(日) -->
-        <div class="day-card weekend">
-            <div class="day-title">
-                <span class="day-name">2月1日(日)</span>
-                <span class="time-badge">3時間（基礎30m + 曲150m）</span>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分（右手弧、70BPM変奏）/ スラー5分（スムーズ連打）/ トレモロ5分（均等8小節）/ 譜読み+スケール10分（新譜読み＋クロマチック半音階）
+        <header>
+            <h1>🎸 ギター練習スケジュール</h1>
+            <p>2月8日（日）～ 2月14日（土）</p>
+            <p>シャコンヌ攻略 × 3曲維持 ─ 22日のマスタークラスに向けて</p>
+        </header>
+
+        <!-- 全体戦略セクション -->
+        <div class="strategy-section">
+            <h2>📋 全体戦略 ─ この1週間の目標</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h3>🎯 シャコンヌ中心期</h3>
+                    <ul>
+                        <li><strong>配分:</strong> 平日60分、週末75分</li>
+                        <li><strong>目標:</strong> 全体通し安定化</li>
+                        <li><strong>狙い:</strong> セクション1-3の完成度を高め、マスタークラス準備</li>
+                        <li><strong>キー:</strong> 音色・表現の向上に注力</li>
+                    </ul>
                 </div>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（150分）</div>
-                <div class="content">
-                    <strong>シャコンヌ25分：</strong>2年ぶり復習。運指見直しポイント3箇所ピックアップ、スロー練習。<br>
-                    <strong>歌と踊り20分：</strong>テンポ遅めスタート、5分チャンク×4。通し1回。<br>
-                    <strong>デュオ15分：</strong>前回のミス箇所再確認。ラニエリ/マルチェリから選択。<br>
-                    <strong>総復習30分：</strong>週の総括、3曲通しで集中持続確認。
+
+                <div class="strategy-card">
+                    <h3>🎵 3曲の維持強化</h3>
+                    <ul>
+                        <li><strong>配分:</strong> 平日各10分、週末各15分</li>
+                        <li><strong>ラニエリ:</strong> リズム同期の最終確認</li>
+                        <li><strong>マルチェリ:</strong> アドリブの固定化</li>
+                        <li><strong>歌と踊り:</strong> リズム基盤の徹底</li>
+                    </ul>
                 </div>
-            </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>週始まりは軽めの復習から。シャコンヌは「感覚取り戻し」を優先し、完璧さより流れ重視。2年前の演奏動画を参考に、表現のイメージを思い出して。
-            </div>
-            
-            <div class="encouragement">
-                ✨ 今週も素晴らしい1週間の始まり。2/22・2/28という2つの大舞台へ、一歩ずつ着実に。まずは曲との再会を大切に！
+
+                <div class="strategy-card">
+                    <h3>💡 成功のキー</h3>
+                    <ul>
+                        <li><strong>メトロノーム必須:</strong> 全曲でリズム安定</li>
+                        <li><strong>スロー→速→スロー循環:</strong> 正確性と音楽性の両立</li>
+                        <li><strong>左手疲労管理:</strong> 20-30分でセッション切替</li>
+                        <li><strong>毎日のミス記録:</strong> 次の日に優先順位が決まる</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
-        <!-- 2月2日(月) -->
-        <div class="day-card weekday">
-            <div class="day-title">
-                <span class="day-name">2月2日(月)</span>
-                <span class="time-badge">1.5時間（基礎30m + 曲60m）</span>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分（速め80BPM変奏）/ スラー5分（スムーズ連打）/ トレモロ5分（短めテンポアップ）/ 和音+リズム10分（コード切り替え＋ボサノバリズム刻み）
+
+        <!-- 日ごとのスケジュール -->
+        <div class="daily-schedule">
+            <!-- 日曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月8日 (日)</h3>
+                    <p>📊 週末スタート | 2時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>75分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">セクション1-2の強化＋全体通し</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">楽譜あり、スロー→速→スロー循環。難所パッセージ（小節25-35）を10回ループ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> リラックスして弾く。指の大きな動きで音量・音色を向上させることに注意
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 通すことより、正確性と音の美しさを優先
+                        </div>
+                    </div>
+
+                    <!-- ラニエリ・マルチェリ・歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>各15分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">内容:</span>
+                                <span class="detail-content">ラニエリ：楽譜通し2回。マルチェリ：楽譜通し＋アドリブ1回。歌と踊り：暗譜で不安箇所ループ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> メトロノーム必須。リズムの同期を確認。パートナー視点を意識
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 完璧さより、デュオ相手との呼吸を感じることが大切
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 日曜日のメッセージ</h4>
+                        <p>いよいよ1週間スタート！まずはリラックスして、シャコンヌの音の美しさを引き出すことに集中してください。週末の2時間は、集中力のピークです。焦らず、一つ一つの音を大切に。22日のマスタークラスまで、14日間のカウントダウン開始。一緒に頑張ろう！</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（60分）</div>
-                <div class="content">
-                    <strong>シャコンヌ25分：</strong>装飾音スロー分解（例：トリル部分を半速で明確に）<br>
-                    <strong>歌と踊り20分：</strong>メトロノーム80%テンポで通し2回。ミス箇所記録。<br>
-                    <strong>デュオ15分：</strong>相手曲を選択、ミス慣れトレーニング。
+
+            <!-- 月曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月9日 (月)</h3>
+                    <p>📊 平日本格始動 | 1.5時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>60分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">全体通し＋セクション2難所</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ウォームアップ5分（スケール）→全体通し（楽譜）→セクション2（小節40-50）スロー＆ループ→クールダウン</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 今週最初。集中力は高いはず。通し演奏で流れを確認し、その後細部を磨く
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> マスタークラスまで残り2週間。毎日少しずつ完成度が上がる実感を大切に
+                        </div>
+                    </div>
+
+                    <!-- ラニエリ・マルチェリ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span>各10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">リズム同期＋アドリブ定着</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ラニエリ：楽譜通し2回。マルチェリ：基本形＋好評アドリブ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 疲労は少ないはず。正確さと呼吸を意識
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> デュオはパートナーとの信頼が土台。リズムの揺れを一緒に整える
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">リズム確認（全体軽く）</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で通し1回。不安箇所あれば記録</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 平日は短めに。疲労を残さない。問題点を明日の週末に持ち越す
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 難曲だから一気に完璧を目指さない。コツコツの積み重ね
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 月曜日のメッセージ</h4>
+                        <p>月曜日は『本気の始まり』。集中力が一番高い時間です。シャコンヌの通し演奏で全体の流れを把握し、その後セクション2の難所に集中。今日通した感覚が、この1週間の基盤になります。焦らず、正確に。完璧でなくても、毎日一歩前へ。</p>
+                    </div>
                 </div>
             </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>月曜は「復習モード」。日曜の感覚が残っているうちに、シャコンヌの装飾音を細分化。スロー→半速→本速の3段階練習が効果的。歌と踊りはメトロノームで「ズレ」を視覚化。
+
+            <!-- 火曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月10日 (火)</h3>
+                    <p>📊 新セクション導入 | 1.5時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>60分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">セクション3の導入＋通し安定化</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ウォームアップ5分→セクション1-2通し（楽譜）→セクション3（小節50-70）スロー＆ゆっくり導入</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新しいセクションを始める前に、既習部分でリズム感を安定させておく
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 難所が多い週。焦らず、音楽の流れを感じることに集中
+                        </div>
+                    </div>
+
+                    <!-- マルチェリ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">アドリブ変奏の微調整</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">基本形通し＋好評アドリブを再現＋新しい変奏を1種試す</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 月曜の好評部分を固定化。新展開はマスタークラスの質問にする手も
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> アドリブは型をしっかり持つことで、自由度が増す
+                        </div>
+                    </div>
+
+                    <!-- ラニエリ・歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>各10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">内容:</span>
+                                <span class="detail-content">ラニエリ：楽譜通し1回。歌と踊り：暗譜ゆっくり1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 疲労管理。難曲は短く、正確さを保つ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 短くても高い集中力で。量より質
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 火曜日のメッセージ</h4>
+                        <p>火曜日は『新しいチャレンジの日』。セクション3に挑戦します。完璧でなくても大丈夫。新しい領域を『触る』という経験が大切。週末に向けて、小さな成功を積み重ねてください。難曲だからこそ、焦らず前へ進もう。</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="encouragement">
-                ✨ 平日の貴重な時間。短時間でも「何を直すか」明確に。1曲30分より、3曲20分の方が脳がリフレッシュ。集中の質を意識して。
+
+            <!-- 水曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月11日 (水)</h3>
+                    <p>📊 週の中盤・踏ん張り | 1.5時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>60分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">セクション3の安定＋全体流れ確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ウォームアップ5分→セクション1-3通し（楽譜）→セクション3スロー＆ループ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 週の中盤。体力と集中力のバランスを見極める。必要に応じて10分の短い休憩を挟む
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 水曜日は『踏ん張りどき』。ここで粘り強さを示すと、後半がぐっと楽になる
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">リズム基盤：メトロノーム使用</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜でメトロノーム＆足踏み。リズム不安箇所を3回ループ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 音ではなくリズムのみに集中。メトロノームは友。テンポ安定の第一歩
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『正確に通す』より『リズムを完全掌握』に重点を
+                        </div>
+                    </div>
+
+                    <!-- ラニエリ・マルチェリ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span>各10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">デュオ相手との信頼構築</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">楽譜通し2回ずつ。リズム同期を意識</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 完璧でなくても、リズムが揃っていることが大事。相手を聴く余裕を持つ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> デュオは『一体感』。自分のパートだけでなく全体のハーモニーを感じる
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 水曜日のメッセージ</h4>
+                        <p>水曜日は『踏ん張りの日』。ここで粘り強さを発揮してください。疲れても、集中力を保つ。この1日を乗り越えれば、後半は楽になります。『できるようになってきた』という実感が、次の力になる。あと2日で週末。頑張ろう！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 木曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月12日 (木)</h3>
+                    <p>📊 調整・復習の日 | 1.5時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>60分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">セクション2の再強化（今週の弱点復習）</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ウォームアップ→セクション1全体通し→セクション2難所（小節40-50）を20回ループ＆スロー</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 木曜は『調整日』。月曜の記録から弱点を洗い出し、集中的に磨く
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 完璧を目指さず、今週の学びを固定化することが目的
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">ミスした箇所の部分練習</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で不安箇所3つを選び、各5回ループ。スロー＆速のサイクル</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 左手疲労を感じたら、手を休ませてから再開。無理は禁物
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 疲労感は本番でも起きる。今から慣れることで、本番の対応力が上がる
+                        </div>
+                    </div>
+
+                    <!-- ラニエリ・マルチェリ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span>各10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">アドリブ固定化＆デュオリズム最終確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ラニエリ：楽譜通し1回（リズムシビア）。マルチェリ：基本＋アドリブ固定版</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 週末に向けて『完成版』を決める。本番同様の集中力で
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『できた』という達成感を持って週末を迎えよう
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 木曜日のメッセージ</h4>
+                        <p>木曜日は『調整と確認の日』。月曜から積み重ねた成果を見直す時間です。完璧さを求めず、『この1週間で何ができるようになったか』を喜んでください。明日からの週末に向けて、小さな達成感を持ってスタートしましょう。もう一踏ん張り！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 金曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月13日 (金)</h3>
+                    <p>📊 柔軟性・表現の日 | 1.5時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>60分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">セクション1-3全体通し＋音楽性の深掘り</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ウォームアップ→全体通し（楽譜、本番同様の集中）→セクション1（小節1-25）スローで音色・表現を磨く</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 金曜は『柔軟性の日』。正確さだけでなく、音色や表現力の向上に時間をかけるチャンス
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『通す』から『表現する』へシフト。マスタークラスの先生に見ていただく準備
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り・ラニエリ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span>各10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">リズム定着＆デュオ仕上げ</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">歌と踊り：暗譜でメトロノーム。ラニエリ：楽譜通し＆デュオ時の呼吸確認</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 週末に向けて『できている感覚』を持つ。小さな成功を積み重ねる
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 5日間の積み重ねの成果を実感する日。進捗を喜ぶ
+                        </div>
+                    </div>
+
+                    <!-- マルチェリ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">アドリブ完成版の本番シミュレーション</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">楽譜通し＋確定アドリブを『本番気分』で通し1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> パートナー視点で。呼吸・タイミングの微調整。完璧でなくても『作品』として完成
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『これが本番』という意識で。集中力の最高峰を引き出す
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 金曜日のメッセージ</h4>
+                        <p>金曜日は『表現と完成の日』。5日間の練習の成果が、ここで実になります。シャコンヌの音色・表現に時間をかけてください。『できた』という感覚を持って週末を迎えることが、明日への自信につながります。もう一歩。あと1日で週末です。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 土曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>2月14日 (土)</h3>
+                    <p>📊 1週間の総決算 | 2時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- シャコンヌ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-chaconne">シャコンヌ</span>
+                            <span>75分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">全体通し＋弱点最終調整＆本番シミュレーション</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">ウォームアップ10分→全体通し＆記録（楽譜あり）→月火水の記録から弱点を選び、各20回ループ→本番気分で全体通し1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 1週間の総決算。今週のシャコンヌの完成度を実感する。来週のマスタークラスに向けて自信を持つ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『できるようになった』という感覚。完璧でなくても、確実な進歩を喜ぶ。来週への励み
+                        </div>
+                    </div>
+
+                    <!-- ラニエリ・マルチェリ・歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-ranieri">ラニエリ</span>
+                            <span class="piece-badge badge-marcelli">マルチェリ</span>
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>各15分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">本番シミュレーション</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">各曲を『本番と同じ緊張感』で通し。リズム・呼吸・表現を統合</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> デュオは相手と合わせる最終確認。歌と踊りはリズムの安定を最優先に
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 22日のシャコンヌまで、そして28日の3曲まで。全力で走り抜けよう
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 土曜日のメッセージ</h4>
+                        <p>土曜日は『1週間の総決算』です。この1週間、あなたは確実に前へ進みました。シャコンヌの完成度が上がり、3曲のリズムも安定してきた。完璧ではなくても『できるようになってきた』という実感が、最高の成果です。</p>
+                        <p>来週は22日のマスタークラスに向けて、さらに集中します。あなたならできます。22日に先生に『こんなにできるようになった』と見ていただく準備。28日の本番に向けて、全4曲を完璧に。</p>
+                        <p><strong>一週間、お疲れ様でした。素晴らしい進歩を見ました。来週も一緒に頑張ろう。🎸</strong></p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- 2月3日(火) -->
-        <div class="day-card weekday">
-            <div class="day-title">
-                <span class="day-name">2月3日(火)</span>
-                <span class="time-badge">1.5時間</span>
-                <span class="event-badge">レッスン</span>
-            </div>
+
+        <!-- 1週間の総括 -->
+        <div class="weekly-summary">
+            <h2>🏆 この1週間について</h2>
+            <p><strong>配分方針</strong></p>
+            <p>シャコンヌを中心に、確実に完成度を高めつつ、3曲のリズム・デュオ感を維持。毎日の積み重ねが22日のマスタークラスに直結します。</p>
             
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分（重点）/ スラー5分 / トレモロ5分/ 譜読み+和音10分
-                </div>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（60分）</div>
-                <div class="content">
-                    <strong>歌と踊り重点（60分）：</strong>レッスン準備。通し練習3回→苦手フレーズ分解→通し2回。集中5分チャンク×4。細かいミス・リズムの甘さを修正。本番を想定した通し演奏を2回。
-                </div>
-            </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>レッスン直前。通し→修正→再通しのサイクルで。先生へ「集中力が途切れやすい」「リズムが甘い」という課題を事前に共有。レッスン後の修正指示を素早く反映するため、レッスン中は録音必須。
-            </div>
-            
-            <div class="encouragement">
-                ✨ レッスンは上達の大チャンス。先生の指摘を「批判」でなく「宝物」と思って。今日の1時間で、あなたの歌と踊りが一段階進化する瞬間。楽しんで！
-            </div>
+            <p style="margin-top: 20px;"><strong>成功のカギ</strong></p>
+            <p>✓ メトロノームを毎日使用（リズム安定の第一歩）<br>
+            ✓ スロー→速→スロー循環（正確性と音楽性の両立）<br>
+            ✓ 左手疲労管理（20-30分単位で切替）<br>
+            ✓ 毎日のミス記録（次の日の優先順位が自動的に決まる）<br>
+            ✓ 本番同様の集中力（週末の2時間は『本気モード』）</p>
+
+            <p style="margin-top: 20px;"><strong>あなたへのメッセージ</strong></p>
+            <p>難曲だから焦らず、コツコツ。完璧でなくても、毎日の小さな進歩を喜んでください。<br>
+            シャコンヌ、歌と踊り、マルチェリ、ラニエリ。<br>
+            22日のマスタークラスで『確実に上達した』と言ってもらえるレベルまで、あと2週間で仕上げます。<br>
+            一緒に頑張ろう。あなたならできます。🎸✨</p>
         </div>
-        
-        <!-- 2月4日(水) -->
-        <div class="day-card weekday">
-            <div class="day-title">
-                <span class="day-name">2月4日(水)</span>
-                <span class="time-badge">1.5時間（基礎30m + 曲60m）</span>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分 / スラー5分 / トレモロ5分 / スケール+リズム10分（スケール速度上げ＋ベース/メロディリズム独立）
-                </div>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（60分）</div>
-                <div class="content">
-                    <strong>シャコンヌ25分：</strong>装飾音スロー継続（昨日の続き）<br>
-                    <strong>歌と踊り20分：</strong>レッスンからの修正反映。メトロノーム本番テンポで1回。<br>
-                    <strong>デュオ15分：</strong>ラニエリ/マルチェリどちらか通し。
-                </div>
-            </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>レッスンの余韻が残っているうち。先生の指示を実践する「黄金期」。昨日の修正を今日反映できれば、上達曲線が急上昇。シャコンヌは引き続き「スロー→本速」の2段階。
-            </div>
-            
-            <div class="encouragement">
-                ✨ 水曜日。週の中盤。レッスンの効果を最大化する日。修正を反映した「新しい歌と踊り」を感じてください。変化を実感すれば、モチベーションもぐんと上がる！
-            </div>
-        </div>
-        
-        <!-- 2月5日(木) -->
-        <div class="day-card weekday">
-            <div class="day-title">
-                <span class="day-name">2月5日(木)</span>
-                <span class="time-badge">1.5時間（基礎30m + 曲60m）</span>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分 / スラー5分 / トレモロ5分 / 譜読み+スケール10分（新譜＋クロマチック速度上げ80BPM）
-                </div>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（60分）</div>
-                <div class="content">
-                    <strong>シャコンヌ25分：</strong>装飾音3xクリア（スロー→8掛け→本速）<br>
-                    <strong>歌と踊り20分：</strong>本番テンポでメトロノーム。ミス0チャレンジ1回。<br>
-                    <strong>デュオ15分：</strong>相手曲交代選択。
-                </div>
-            </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>木曜は「確認の日」。シャコンヌの装飾音が3段階でクリアできるなら、課題は解決に近づいている。歌と踊りは「ミス0」という明確な目標で集中力を鍛える。
-            </div>
-            
-            <div class="encouragement">
-                ✨ 週も後半。疲れが出始める時期だからこそ、短時間で効果を出す工夫が大事。3曲を「飛び飛びで」変えることで、脳がリフレッシュ。楽しさを忘れずに！
-            </div>
-        </div>
-        
-        <!-- 2月6日(金) -->
-        <div class="day-card weekday">
-            <div class="day-title">
-                <span class="day-name">2月6日(金)</span>
-                <span class="time-badge">1.5時間（基礎30m + 曲60m）</span>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分 / スラー5分 / トレモロ5分 / 和音+リズム10分（コード切り替え速度化＋ボサノバ刻み）
-                </div>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（60分）</div>
-                <div class="content">
-                    <strong>シャコンヌ25分：</strong>本番テンポで通し。運指スムーズさ確認。<br>
-                    <strong>歌と踊り20分：</strong>リズムの甘さ修正。メトロノーム重視。<br>
-                    <strong>デュオ15分：</strong>週末練習へ向け、相手曲を選択。<strong>※全て録音して確認</strong>。
-                </div>
-            </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>金曜は「録音デー」。今週の成果を音声で客観的に確認。シャコンヌは「2年前との違い」を感じ、歌と踊りは「リズムのズレ」を可視化。デュオはパートナーとの通しで、明日の練習課題を洗い出し。
-            </div>
-            
-            <div class="encouragement">
-                ✨ 週の最後。5日間の積み重ねが今、形になっている。録音を聴いて、自分の進化を感じてください。明日の週末練習へ、自信を持って臨もう！
-            </div>
-        </div>
-        
-        <!-- 2月7日(土) -->
-        <div class="day-card weekend">
-            <div class="day-title">
-                <span class="day-name">2月7日(土)</span>
-                <span class="time-badge">3時間（基礎30m + 曲150m）</span>
-                <span class="event-badge">デュオ練習</span>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">基礎練習（30分）</div>
-                <div class="content">
-                    アルペジオ10分 / スラー5分 / トレモロ5分 / 譜読み+和音10分
-                </div>
-            </div>
-            
-            <div class="practice-section">
-                <div class="section-title">曲練習（150分）</div>
-                <div class="content">
-                    <strong>デュオ練習40分：</strong>ラニエリ&マルチェリ通し（アドリブ/ラスゲアード反映）。相手とのテンポ合わせ、ダイナミクス調整。<br>
-                    <strong>シャコンヌ30分：</strong>運指通し確認。装飾音スムーズさ再チェック。<br>
-                    <strong>歌と踊り20分：</strong>集中本番シミュレーション3回。<br>
-                    <strong>総復習30m：</strong>週全体の進捗レビュー。各曲の「得たもの」を日記に記録。
-                </div>
-            </div>
-            
-            <div class="tips">
-                💡 <strong>今日のTips：</strong>週末の集大成。デュオ練習は「相手との息」を最優先。ラスゲアードやアドリブは相手の反応を見ながら調整。シャコンヌ・歌と踊りは「本番モード」。総復習では、今週学んだこと＋来週への課題を明確に。
-            </div>
-            
-            <div class="encouragement">
-                ✨ 1週間、本当にお疲れ様。5日間の平日と週末の集中練習。あなたは確実に成長している。デュオの相手と音を合わせる喜びを感じてください。来週はもっと輝く演奏へ。素晴らしい1週間だった！
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>2月1日～7日のスケジュール | 毎日の録音レビュー＆SMART目標で、2/22MC・2/28発表会へ着実に!</p>
-            <p style="margin-top: 10px;">困ったときは、短時間でも「何を直すか」明確に。完璧さより「流れ」を大切に。楽しい練習を！</p>
+
+        <div class="time-info" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--color-border);">
+            <p>毎日終わり5分で『今日のミス箇所メモ＋次日優先リスト』を取ると、集中力が持続します。</p>
+            <p style="margin-top: 10px; color: var(--color-primary); font-weight: 600;">頑張ってください。22日に会いましょう！</p>
         </div>
     </div>
 </body>
