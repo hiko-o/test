@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>ギター練習スケジュール 2/24-2/27</title>
+    <title>ギター練習スケジュール 3/1-3/7</title>
     <style>
         :root {
             --color-primary: #0284c7;
@@ -14,9 +14,11 @@
             --color-bg: #f8fafc;
             --color-surface: #ffffff;
             --color-border: #e2e8f0;
+            --color-accent-passacaglia: #dc2626;
             --color-accent-song: #7c3aed;
-            --color-accent-ranieri: #059669;
-            --color-accent-marcelli: #d97706;
+            --color-accent-blue-jeans: #2563eb;
+            --color-accent-tristeza: #9333ea;
+            --color-accent-goya: #ea580c;
         }
 
         * {
@@ -41,7 +43,7 @@
         header {
             text-align: center;
             margin-bottom: 40px;
-            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             color: white;
             padding: 30px 20px;
             border-radius: 12px;
@@ -62,7 +64,7 @@
 
         .strategy-section {
             background: var(--color-surface);
-            border-left: 4px solid #7c3aed;
+            border-left: 4px solid #dc2626;
             padding: 25px;
             margin-bottom: 30px;
             border-radius: 8px;
@@ -70,7 +72,7 @@
         }
 
         .strategy-section h2 {
-            color: #7c3aed;
+            color: #dc2626;
             margin-bottom: 15px;
             font-size: 1.5em;
         }
@@ -90,7 +92,7 @@
         }
 
         .strategy-card h3 {
-            color: #7c3aed;
+            color: #dc2626;
             margin-bottom: 10px;
             font-size: 1.1em;
         }
@@ -126,7 +128,7 @@
         }
 
         .day-header {
-            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
             color: white;
             padding: 20px;
             text-align: center;
@@ -177,16 +179,24 @@
             color: white;
         }
 
+        .badge-passacaglia {
+            background-color: var(--color-accent-passacaglia);
+        }
+
         .badge-song {
             background-color: var(--color-accent-song);
         }
 
-        .badge-ranieri {
-            background-color: var(--color-accent-ranieri);
+        .badge-blue-jeans {
+            background-color: var(--color-accent-blue-jeans);
         }
 
-        .badge-marcelli {
-            background-color: var(--color-accent-marcelli);
+        .badge-tristeza {
+            background-color: var(--color-accent-tristeza);
+        }
+
+        .badge-goya {
+            background-color: var(--color-accent-goya);
         }
 
         .session-detail {
@@ -206,7 +216,7 @@
 
         .detail-label {
             font-weight: 600;
-            color: #7c3aed;
+            color: #dc2626;
             min-width: 80px;
         }
 
@@ -229,8 +239,8 @@
         }
 
         .mindset-box {
-            background: #dbeafe;
-            border-left: 4px solid #7c3aed;
+            background: #fce7f3;
+            border-left: 4px solid #dc2626;
             padding: 12px;
             border-radius: 6px;
             margin-top: 10px;
@@ -238,12 +248,12 @@
         }
 
         .mindset-box strong {
-            color: #7c3aed;
+            color: #dc2626;
         }
 
         .daily-message {
             background: var(--color-surface);
-            border-left: 4px solid #7c3aed;
+            border-left: 4px solid #dc2626;
             padding: 20px;
             margin-top: 20px;
             border-radius: 8px;
@@ -252,14 +262,14 @@
         }
 
         .daily-message h4 {
-            color: #7c3aed;
+            color: #dc2626;
             margin-bottom: 10px;
             font-size: 1.1em;
         }
 
         .weekly-summary {
             background: var(--color-surface);
-            border: 2px solid #7c3aed;
+            border: 2px solid #dc2626;
             padding: 25px;
             margin-top: 30px;
             border-radius: 12px;
@@ -267,7 +277,7 @@
         }
 
         .weekly-summary h2 {
-            color: #7c3aed;
+            color: #dc2626;
             margin-bottom: 15px;
             font-size: 1.5em;
         }
@@ -282,6 +292,31 @@
             font-size: 0.85em;
             color: var(--color-text-light);
             margin-top: 8px;
+        }
+
+        .foundational-practices {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .foundational-practices h4 {
+            color: #b45309;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .foundational-practices ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        .foundational-practices li {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #7c2d12;
         }
 
         @media (max-width: 768px) {
@@ -303,41 +338,58 @@
     <div class="container">
         <header>
             <h1>🎸 ギター練習スケジュール</h1>
-            <p>2月24日（火）～ 2月27日（金）</p>
-            <p>28日本番直前・最後の仕上げ ─ ソロ重点＆デュオ維持</p>
+            <p>3月1日（日）～ 3月7日（土）</p>
+            <p>パッサカリア重点準備 ─ 3/22マスタークラスへ向けて</p>
         </header>
 
         <!-- 全体戦略セクション -->
         <div class="strategy-section">
-            <h2>📋 全体戦略 ─ この4日間の目標</h2>
+            <h2>📋 全体戦略 ─ この1週間の目標</h2>
             <div class="strategy-grid">
                 <div class="strategy-card">
-                    <h3>🎯 歌と踊り集中期</h3>
+                    <h3>🎯 パッサカリア集中期</h3>
                     <ul>
-                        <li><strong>配分:</strong> 平日20分→金曜30分へ段階増</li>
-                        <li><strong>目標:</strong> リズム安定→後半ミスゼロ→ダイナミクス統合</li>
-                        <li><strong>狙い:</strong> 本番テンポでの5連続ミスゼロ達成＆表現力完成</li>
-                        <li><strong>キー:</strong> 本番-10%→-5%→本番テンポへ段階加速</li>
+                        <li><strong>配分:</strong> 1日40分（最大配分）</li>
+                        <li><strong>3つの重点課題：</strong></li>
+                        <li style="margin-left: 20px;">① 表現模索→確定（バロック感・フレーズ弧）</li>
+                        <li style="margin-left: 20px;">② ど忘れ箇所特定→確実暗譜復習</li>
+                        <li style="margin-left: 20px;">③ ミスタッチゼロ（ゆっくりメトロ→段階加速）</li>
+                        <li><strong>狙い:</strong> 3/22マスタークラス完成度70%達成</li>
                     </ul>
                 </div>
 
                 <div class="strategy-card">
-                    <h3>🎵 デュオ維持メンテ</h3>
+                    <h3>✨ 歌と踊り磨き</h3>
                     <ul>
-                        <li><strong>配分:</strong> 毎日20分（ラニエリ10分+マルチェリ10分）</li>
-                        <li><strong>ラニエリ:</strong> 完璧版固定・28日本番同様</li>
-                        <li><strong>マルチェリ:</strong> アドリブ固定版・パートナー同期確認</li>
-                        <li><strong>キー:</strong> 『完成版』を保つ。変化させない</li>
+                        <li><strong>配分:</strong> 1日20分（維持・磨き）</li>
+                        <li><strong>4つの焦点（毎回実施）：</strong></li>
+                        <li style="margin-left: 20px;">① タッチ改善（音をはっきり発音）</li>
+                        <li style="margin-left: 20px;">② リズム安定（オンタイム徹底）</li>
+                        <li style="margin-left: 20px;">③ グリッサンド（きっちり発音）</li>
+                        <li style="margin-left: 20px;">④ 暗譜復習（ど忘れ防止）</li>
+                        <li><strong>狙い:</strong> 3/21発表会完璧仕上げ</li>
                     </ul>
                 </div>
 
                 <div class="strategy-card">
-                    <h3>💡 本番仕様基礎20分</h3>
+                    <h3>🌱 レパートリー拡大</h3>
                     <ul>
-                        <li><strong>内容:</strong> メトロノーム+左手正確性+ピアニッシモ+緊張弛緩+右手深いタッチ</li>
-                        <li><strong>目標:</strong> 本番で『力を引き出す』ウォームアップ完成</li>
-                        <li><strong>毎日実施:</strong> 基礎→デュオ→ソロの流れで体と心を整える</li>
-                        <li><strong>キー:</strong> 本番直前の『最後の調整装置』</li>
+                        <li><strong>BlueJeans:</strong> 20分（復習・安定化）</li>
+                        <li><strong>Tristeza:</strong> 10分（復習・継続維持）</li>
+                        <li><strong>ゴヤのマハ：</strong> 10分/日（新曲・基礎開拓）</li>
+                        <li><strong>狙い:</strong> 複数レパートリー同時進行の効率化</li>
+                        <li><strong>キー:</strong> 新曲は短時間で『基本フォーム』確立</li>
+                    </ul>
+                </div>
+
+                <div class="strategy-card">
+                    <h3>💪 基礎20分（毎日必須）</h3>
+                    <ul>
+                        <li><strong>内容:</strong> アルペジオ・スラー・和音・トレモロ・譜読み</li>
+                        <li><strong>実施:</strong> 5つのテーマを『全て毎回』</li>
+                        <li><strong>目標:</strong> 技術基盤安定＆新曲習得支援</li>
+                        <li><strong>時間配分：</strong>各3-4分ローテーション</li>
+                        <li><strong>キー:</strong> 基礎が強いと、全曲が安定</li>
                     </ul>
                 </div>
             </div>
@@ -345,51 +397,46 @@
 
         <!-- 日ごとのスケジュール -->
         <div class="daily-schedule">
-            <!-- 火曜 -->
+            <!-- 日曜 -->
             <div class="day-card">
                 <div class="day-header">
-                    <h3>2月24日 (火)</h3>
-                    <p>📊 本番直前スタート | 1.5時間</p>
+                    <h3>3月1日 (日)</h3>
+                    <p>📊 新週スタート＆パッサカリア本格始動 | 2時間</p>
                 </div>
                 <div class="day-content">
                     <!-- 基礎 -->
-                    <div class="practice-session">
-                        <div class="piece-title">
-                            <span style="font-weight: 600; color: #0284c7;">基礎練習</span>
-                            <span>20分</span>
-                        </div>
-                        <div class="session-detail">
-                            <div class="detail-row">
-                                <span class="detail-label">内容:</span>
-                                <span class="detail-content">メトロノーム5分（リズム予感）→左手正確性5分（隣弦タッチゼロ）→ピアニッシモ5分（響く弱音）→緊張弛緩3分（フレーズ弧）→右手深いタッチ2分</span>
-                            </div>
-                        </div>
-                        <div class="tips-box">
-                            <strong>💡 Tips:</strong> 本番仕様。毎日このセットでウォームアップ。体と心を『本番モード』に切り替える
-                        </div>
-                        <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 基礎が完璧なら、本番で力を100%引き出せる
-                        </div>
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）- 右手の流動性強化</li>
+                            <li>✓ スラー（4分）- 左手の正確性＆スピード</li>
+                            <li>✓ 和音（4分）- 左手の正確性＆厚み</li>
+                            <li>✓ トレモロ（4分）- 右手の均等性</li>
+                            <li>✓ 譜読み（4分）- 新曲対応＆スケール</li>
+                        </ul>
                     </div>
 
-                    <!-- デュオ -->
+                    <!-- パッサカリア -->
                     <div class="practice-session">
                         <div class="piece-title">
-                            <span class="piece-badge badge-ranieri">ラニエリ</span>
-                            <span class="piece-badge badge-marcelli">マルチェリ</span>
-                            <span>各10分</span>
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>40分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">表現模索の開始＆ど忘れ箇所の発見</span>
+                            </div>
+                            <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">ラニエリ：楽譜通し2回。マルチェリ：基本形＋アドリブ固定版1回。リズム同期確認</span>
+                                <span class="detail-content">暗譜で本番テンポで通す→『どこで忘れそう？どこがリスク？』をメモ→表現（バロック感・フレーズ弧）を試験的に3パターン。ゆっくりメトロで正確性確認3分</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 『完璧版固定』。28日は『これを弾く』。変化させない
+                            <strong>💡 Tips:</strong> 日曜は『パッサカリア探索の日』。暗譜復習しながら『忘れそう箇所』『表現の余白』を発見する。今週の3テーマ（表現・暗譜・正確性）の『マップ』を作る
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> デュオは安定感。ここは揺らがない
+                            <strong>🧠 心構え:</strong> 新週スタート。パッサカリアとの『深い関係』を作り始める。今週で70%完成度へ
                         </div>
                     </div>
 
@@ -397,29 +444,398 @@
                     <div class="practice-session">
                         <div class="piece-title">
                             <span class="piece-badge badge-song">歌と踊り</span>
-                            <span>20分（リズムの日）</span>
+                            <span>20分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
                                 <span class="detail-label">焦点:</span>
-                                <span class="detail-content">リズム基盤固め＆最後まで乗り切る耐久テスト</span>
+                                <span class="detail-content">タッチ改善＆リズム＆グリッサンド＆暗譜</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">暗譜でメトロノーム本番-10%→リズム不安箇所5つを連続ミスゼロ3セット→全体通し本番-10%テンポで2回＆最後まで乗り切れるか記録</span>
+                                <span class="detail-content">暗譜でメトロノーム本番テンポ→『タッチの明瞭性』を意識して1回→グリッサンド3箇所をきっちり発音1回→最後まで乗り切り確認1回</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 火曜は『リズムの日』。不安なのはリズムだから、メトロノーム厳守＆最後まで乗り切る耐久テスト。左手疲労時は手ほぐし2分休憩
+                            <strong>💡 Tips:</strong> 4つの焦点をぐるぐる回して磨く。タッチをはっきり→リズム→グリッサンド→暗譜。毎日短時間で反復すると『1つの完璧な作品』になる
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 『リズムを完全掌握』が最優先。できたら次へ進める
+                            <strong>🧠 心構え:</strong> 3/21発表会への磨き。今週20分×7日＝140分。時間をかけずに完璧に
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">復習＆安定性確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番テンポで通す→録音して『テンポ・ダイナミクス・リズム』確認→1回軽め復習</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 3月中旬練習会前の『状態チェック』。復習10分+軽めメンテ10分。安定感を確認
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーの効率化。短時間で『いつでも本番できる』という安定感を保つ
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>10分（新曲入門）</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">楽譜読み込み＆基本フォーム習得</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">楽譜を最初から読む（全体構造把握）→ゆっくりメトロで1小節ずつ正確に（右手フォーム確立）→最初の一節を5回繰り返す</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新曲は『焦らず、丁寧に』。1日10分で『基本フォーム』を確立。週末には『3つの基本フレーズ』が弾けると目標
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 新曲は『種まき』。毎日10分で『レパートリーの芽』が育つ
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>10分（軽め復習）</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">継続維持＆忘れ防止</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回通す。リズム安定・ダイナミクス確認。短時間で『今週の状態』をキープ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 軽めメンテナンス。『忘れない』が目的。週末の休息前のウォーミング
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーは『毎日少しずつ』が秘訣
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 日曜日のメッセージ</h4>
+                        <p>新週スタート！今週はパッサカリアが主役。3/22マスタークラスに向けて、この7日間で『表現・暗譜・正確性』の3つを深掘りします。</p>
+                        <p>新曲『ゴヤのマハ』も追加。1日10分で『レパートリーの芽』を育てる。複数曲を効率的に進める体験ができます。</p>
+                        <p>2時間の練習で5曲（基礎+4曲）を進める。時間を大切に、丁寧に。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 月曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>3月2日 (月)</h3>
+                    <p>📊 パッサカリア暗譜重点 | 2時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- 基礎 -->
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）</li>
+                            <li>✓ スラー（4分）</li>
+                            <li>✓ 和音（4分）</li>
+                            <li>✓ トレモロ（4分）</li>
+                            <li>✓ 譜読み（4分）- ゴヤのマハ対応</li>
+                        </ul>
+                    </div>
+
+                    <!-- パッサカリア -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>40分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">日曜で見つけた『ど忘れ箇所』の確実暗譜＆修正</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">日曜のメモから『怪しい箇所』3-4つをピックアップ→各箇所をゆっくりメトロで10回繰り返し（脳に叩き込む）→全体をゆっくりで1回→表現の1パターンで本番テンポ1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 月曜は『ど忘れ対策の日』。『繰り返し・脳への叩き込み』で確実性を高める。ゆっくり正確が基本
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 暗譜は『実戦への信頼感』。今週の暗譜復習で3/22が近づく
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">タッチ改善＆リズム＆グリッサンド＆暗譜</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜でメトロノーム本番テンポ→『リズムのオンタイム性』を意識して1回→グリッサンド3箇所1回→最後まで乗り切り1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 月曜は『リズム重点』。オンタイムを徹底。タッチ→リズム→グリッサンド→暗譜をぐるぐる回す
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 3/21発表会への着実な進歩。毎日少しずつ磨く
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">復習＆テンポ安定性</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番テンポで通す→『テンポのぶれ』をチェック→ゆっくりメトロで正確性確認3分</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 短時間で『テンポ安定性』をキープ。複数レパートリーの効率的な維持
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 短時間で『いつでも本番できる』という安定感
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">最初の一節をしっかり→第2フレーズ入門</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">日曜習ったフレーズを3回確認→第2フレーズを楽譜から読み込む→ゆっくりメトロで5回試行</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新曲は『毎日少しずつ前へ』。週末に『3つのフレーズ』が目標。焦らず丁寧に
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 新曲の『種』が少しずつ芽を出す感覚を楽しむ
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め復習＆忘れ防止</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回。ダイナミクス確認。短時間で『今週の状態』をキープ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 毎日の軽いメンテナンス。『忘れない』が目的
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーの継続は『短時間の習慣』
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 月曜日のメッセージ</h4>
+                        <p>月曜は『パッサカリア暗譜重点の日』。日曜で見つけた『ど忘れ箇所』に徹底的に向き合う。繰り返し・脳への叩き込みで、確実性を高める。</p>
+                        <p>新曲『ゴヤのマハ』も2フレーズ目へ。毎日10分で着実に進む。週末に『3フレーズ完成』が見える。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 火曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>3月3日 (火)</h3>
+                    <p>📊 パッサカリア表現確定 | 2時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- 基礎 -->
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）</li>
+                            <li>✓ スラー（4分）</li>
+                            <li>✓ 和音（4分）</li>
+                            <li>✓ トレモロ（4分）</li>
+                            <li>✓ 譜読み（4分）</li>
+                        </ul>
+                    </div>
+
+                    <!-- パッサカリア -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>40分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">表現の確定＆バロック感・フレーズ弧の構築</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">日曜の試験的パターン3つの中から『最高の1パターン』を選定→それで本番テンポ5回→ゆっくりで正確性3回→『これが3/22の表現だ』という確信を持つ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 火曜は『表現確定の日』。ここで『バロック感』『フレーズ弧』『音の呼吸』を決める。3/22はこれを弾く
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 表現の確定で『一つの完成した作品』として見える。3/22へ向けて、あと半分の道
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">タッチ改善＆リズム＆グリッサンド＆暗譜</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜でメトロノーム本番テンポ→『グリッサンドのきっちり発音』を重点1回→タッチの明瞭性1回→最後まで乗り切り1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 火曜は『グリッサンド重点』。きっちり発音で『表現力』が高まる。毎回4つを回す
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 細かい技巧の積み重ね＝完璧な表現
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">復習＆ダイナミクス確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番テンポで通す→『ダイナミクスのメリハリ』を確認→軽め復習1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 短時間で『今週の状態』をキープ。安定感を保つ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーは『毎日少し』が秘訣
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">第2フレーズ確実習得→第3フレーズ入門</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-label"></span>
+                                <span class="detail-content">第1+第2フレーズを連続で3回→第3フレーズを楽譜から読み込む→ゆっくりメトロで3回試行</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新曲の進度：毎日1フレーズペース。週末に『3フレーズ完成』が見える
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 新曲の『種から芽へ』。毎日の小さな努力が大きな成果に
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め復習＆忘れ防止</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回。今週の状態をキープ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 軽いメンテナンス。『忘れない』が目的
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリー継続の習慣
                         </div>
                     </div>
 
                     <div class="daily-message">
                         <h4>📢 火曜日のメッセージ</h4>
-                        <p>本番直前、いよいよ最後の仕上げスタート！28日は明後日です。歌と踊りの最大の不安『リズム』に徹底的に向き合う日。メトロノーム厳守で、指に『正確なリズム感』を叩き込みます。『最後まで乗り切る』という目標も意識。焦らず、確実に。あと3日。頑張ろう！</p>
+                        <p>火曜は『パッサカリア表現確定の日』。バロック感・フレーズ弧・音の呼吸を決定する。これが3/22マスタークラスの『あなたの表現』になる。</p>
+                        <p>新曲『ゴヤのマハ』も3フレーズ目へ。毎日10分で着実に進む。週末に『基本形完成』が見える。</p>
                     </div>
                 </div>
             </div>
@@ -427,48 +843,43 @@
             <!-- 水曜 -->
             <div class="day-card">
                 <div class="day-header">
-                    <h3>2月25日 (水)</h3>
-                    <p>📊 本番1日前・後半ミスゼロ | 1.5時間</p>
+                    <h3>3月4日 (水)</h3>
+                    <p>📊 パッサカリア正確性強化 | 2時間</p>
                 </div>
                 <div class="day-content">
                     <!-- 基礎 -->
-                    <div class="practice-session">
-                        <div class="piece-title">
-                            <span style="font-weight: 600; color: #0284c7;">基礎練習</span>
-                            <span>20分</span>
-                        </div>
-                        <div class="session-detail">
-                            <div class="detail-row">
-                                <span class="detail-label">内容:</span>
-                                <span class="detail-content">メトロノーム5分→左手正確性5分→ピアニッシモ5分→緊張弛緩3分→右手深いタッチ2分</span>
-                            </div>
-                        </div>
-                        <div class="tips-box">
-                            <strong>💡 Tips:</strong> 昨日と同じセット。『本番仕様ウォームアップ』が体に染みていく
-                        </div>
-                        <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> ルーティン化で本番の不安を軽減
-                        </div>
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）</li>
+                            <li>✓ スラー（4分）</li>
+                            <li>✓ 和音（4分）</li>
+                            <li>✓ トレモロ（4分）</li>
+                            <li>✓ 譜読み（4分）</li>
+                        </ul>
                     </div>
 
-                    <!-- デュオ -->
+                    <!-- パッサカリア -->
                     <div class="practice-session">
                         <div class="piece-title">
-                            <span class="piece-badge badge-ranieri">ラニエリ</span>
-                            <span class="piece-badge badge-marcelli">マルチェリ</span>
-                            <span>各10分</span>
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>40分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">ミスタッチゼロ＆ゆっくりメトロでの正確性確立</span>
+                            </div>
+                            <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">ラニエリ：楽譜通し2回。マルチェリ：基本形＋アドリブ固定版1回。完璧版維持</span>
+                                <span class="detail-content">ゆっくりメトロ（本番-30%）で全体通す→ミスタッチ箇所をピックアップ→その箇所だけを10回繰り返し→全体をゆっくり2回→本番-10%で1回</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 『完成版固定』。もう変化させない。本番同様のタイミングで演奏
+                            <strong>💡 Tips:</strong> 水曜は『正確性強化の日』。ゆっくりメトロでミスタッチをゼロにする。『遅い＝正確』を実感。段階的にテンポ上げる基盤作り
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> デュオは完璧。ここに集中する必要なし
+                            <strong>🧠 心構え:</strong> ミスタッチゼロ＝本番での信頼感。この日の成果が3/22で光る
                         </div>
                     </div>
 
@@ -476,29 +887,102 @@
                     <div class="practice-session">
                         <div class="piece-title">
                             <span class="piece-badge badge-song">歌と踊り</span>
-                            <span>20分（後半ミスゼロの日）</span>
+                            <span>20分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
                                 <span class="detail-label">焦点:</span>
-                                <span class="detail-content">後半部分の連続ミスゼロ達成＆全体通しテンポアップ</span>
+                                <span class="detail-content">タッチ改善＆リズム＆グリッサンド＆暗譜</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">暗譜でメトロノーム本番-10%→後半セクション（危険箇所）を連続ミスゼロ5回達成→本番-5%テンポで全体通し2回＆記録</span>
+                                <span class="detail-content">暗譜でメトロノーム本番テンポ→『暗譜復習』を重点1回（ど忘れ防止）→タッチ1回→最後まで乗り切り1回</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 水曜は『後半ミスゼロの日』。後半で落とすのが悪い癖。連続ミスゼロで完全に止める。テンポも少し上げて、本番へ接近
+                            <strong>💡 Tips:</strong> 水曜は『暗譜重点』。完璧に暗譜して、本番での安心感を手に入れる
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 『後半も乗り切れる』という確信を持つ。本番への自信が生まれる
+                            <strong>🧠 心構え:</strong> 暗譜は『実戦への信頼』。3/21本番への最大の武器
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">復習＆ゆっくりメトロ正確性</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番-10%テンポで通す→ゆっくりメトロで正確性3分→軽め1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 短時間で『今週の状態』をキープ。安定感を保つ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーは『毎日少し』で継続
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">3フレーズ確実習得→第4フレーズ入門</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">前3フレーズを連続で2回→第4フレーズを楽譜から読み込む→ゆっくりメトロで3回試行</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新曲の進度：毎日1フレーズペース。週末に『4フレーズ』が見える
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 新曲の『芽から葉へ』。毎日の継続が大きな成果に
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め復習＆忘れ防止</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 軽いメンテナンス。毎日の習慣
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーの継続
                         </div>
                     </div>
 
                     <div class="daily-message">
                         <h4>📢 水曜日のメッセージ</h4>
-                        <p>水曜日は『後半ミスゼロの日』。後半で落とすのは避けたい。連続ミスゼロで『最後まで完璧に乗り切れる』という確信を持つ。テンポも本番-5%へアップ。あと2日。本番が近づいている。焦らず、確実に。</p>
+                        <p>水曜は『パッサカリア正確性強化の日』。ゆっくりメトロでミスタッチをゼロにする。遅い＝正確。この基盤作りが3/22での完璧な演奏に繋がる。</p>
+                        <p>歌と踊りは『暗譜重点』。3/21本番へ向けた最大の武器を手に入れる。</p>
                     </div>
                 </div>
             </div>
@@ -506,48 +990,43 @@
             <!-- 木曜 -->
             <div class="day-card">
                 <div class="day-header">
-                    <h3>2月26日 (木)</h3>
-                    <p>📊 本番前日・ダイナミクス統合 | 1.5時間</p>
+                    <h3>3月5日 (木)</h3>
+                    <p>📊 パッサカリア段階加速 | 2時間</p>
                 </div>
                 <div class="day-content">
                     <!-- 基礎 -->
-                    <div class="practice-session">
-                        <div class="piece-title">
-                            <span style="font-weight: 600; color: #0284c7;">基礎練習</span>
-                            <span>20分</span>
-                        </div>
-                        <div class="session-detail">
-                            <div class="detail-row">
-                                <span class="detail-label">内容:</span>
-                                <span class="detail-content">メトロノーム5分→左手正確性5分→ピアニッシモ5分→緊張弛緩3分→右手深いタッチ2分</span>
-                            </div>
-                        </div>
-                        <div class="tips-box">
-                            <strong>💡 Tips:</strong> 本番前日の『最後のウォームアップセット』。ルーティンの完成
-                        </div>
-                        <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 明日のために、今日のルーティンを完璧に
-                        </div>
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）</li>
+                            <li>✓ スラー（4分）</li>
+                            <li>✓ 和音（4分）</li>
+                            <li>✓ トレモロ（4分）</li>
+                            <li>✓ 譜読み（4分）</li>
+                        </ul>
                     </div>
 
-                    <!-- デュオ -->
+                    <!-- パッサカリア -->
                     <div class="practice-session">
                         <div class="piece-title">
-                            <span class="piece-badge badge-ranieri">ラニエリ</span>
-                            <span class="piece-badge badge-marcelli">マルチェリ</span>
-                            <span>各10分</span>
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>40分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">段階的テンポ加速＆表現と正確性の融合</span>
+                            </div>
+                            <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">ラニエリ：楽譜通し1回＋本番シミュ1回。マルチェリ：基本形＋アドリブ1回＋本番シミュ1回</span>
+                                <span class="detail-content">本番-20%→本番-10%→本番-5%と段階的にテンポ上げる（各2回）→表現確定版で本番テンポ3回→『3/22はこれを弾く』という確信を持つ</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 本番前日。『本番そのもの』で1回通す。パートナーと最後のタイミング確認
+                            <strong>💡 Tips:</strong> 木曜は『段階加速の日』。遅い→正確→速い→表現と、段階的にビルドアップ。3/22へ向けた『本番シミュレーション』がここで完成
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 『明日これを弾く』という意識で。完璧版固定
+                            <strong>🧠 心構え:</strong> ここで『3/22用の完璧なパッサカリア』が完成。あと2日で仕上げ
                         </div>
                     </div>
 
@@ -555,30 +1034,103 @@
                     <div class="practice-session">
                         <div class="piece-title">
                             <span class="piece-badge badge-song">歌と踊り</span>
-                            <span>20分（ダイナミクス統合の日）</span>
+                            <span>20分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
                                 <span class="detail-label">焦点:</span>
-                                <span class="detail-content">ダイナミクス誇張＆対旋律アクセント＆和音バリエーション全て統合</span>
+                                <span class="detail-content">タッチ改善＆リズム＆グリッサンド＆暗譜</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">暗譜で本番-5%テンポ→ダイナミクス大げさ（ピアノ落とす、フォルテ強調）1回→対旋律+和音バリエーション意識で1回→本番テンポで1回</span>
+                                <span class="detail-center">暗譜でメトロノーム本番テンポ→『全4つの焦点を統合』1回（タッチ→リズム→グリッサンド→暗譜全てを）→最後まで乗り切り1回→軽く1回</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 木曜は『ダイナミクス統合の日』。火曜のリズム、水曜の後半、そして今日のダイナミクスと表現力を『一つの作品』にまとめる。左手疲労は2分でリセット
+                            <strong>💡 Tips:</strong> 木曜は『統合の日』。これまでの4つの焦点（タッチ・リズム・グリッサンド・暗譜）を『一つの完璧な作品』にまとめる
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 『難曲も完成した』という実感を持つ。明日の本番は『この作品を弾く』
+                            <strong>🧠 心構え:</strong> 『難曲も完成した』という実感。3/21本番へ向けた『最後の準備』が完了
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">復習＆本番シミュレーション</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番テンポで『本番そのもの』1回→軽め復習1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 『本番そのもの』で演奏。3月中旬練習会へ向けた『状態確認』
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーの『いつでも本番できる』という安定感
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">4フレーズ確実習得→第5フレーズ入門</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">前4フレーズを連続で2回→第5フレーズを楽譜から読み込む→ゆっくりメトロで3回試行</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新曲の進度：毎日1フレーズペース。週末に『完全基本形』が見える
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 新曲の『成長を実感』。毎日の継続が大きな成果に繋がる
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め復習＆忘れ防止</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 毎日の習慣。継続が力
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 複数レパートリーの『習慣』が『実力』に
                         </div>
                     </div>
 
                     <div class="daily-message">
                         <h4>📢 木曜日のメッセージ</h4>
-                        <p>本番前日です！『歌と踊り』のリズム・後半・ダイナミクス・表現力、全てを統合する最後の日。難曲も『一つの完成した作品』として形が見える。明日『これを本番で弾く』という確信を持ってください。</p>
-                        <p><strong>あと1日。最後の準備。明日、精一杯の力を発揮しましょう。🎸✨</strong></p>
+                        <p>木曜は『パッサカリア段階加速の日』。遅い→速いへ段階的にビルドアップ。3/22マスタークラス用の『完璧なパッサカリア』がここで完成。</p>
+                        <p>歌と踊りも『統合の日』。これまでの4つの焦点を『一つの完璧な作品』にまとめる。3/21本番へ向けた『最後の準備』が完了。</p>
+                        <p>新曲『ゴヤのマハ』も5フレーズ目へ。週末に『完全基本形完成』が見える。</p>
                     </div>
                 </div>
             </div>
@@ -586,48 +1138,43 @@
             <!-- 金曜 -->
             <div class="day-card">
                 <div class="day-header">
-                    <h3>2月27日 (金)</h3>
-                    <p>📊 本番当日・最後の調整 | 1.5時間</p>
+                    <h3>3月6日 (金)</h3>
+                    <p>📊 本番前最後の調整 | 2時間</p>
                 </div>
                 <div class="day-content">
                     <!-- 基礎 -->
-                    <div class="practice-session">
-                        <div class="piece-title">
-                            <span style="font-weight: 600; color: #0284c7;">基礎練習</span>
-                            <span>20分</span>
-                        </div>
-                        <div class="session-detail">
-                            <div class="detail-row">
-                                <span class="detail-label">内容:</span>
-                                <span class="detail-content">メトロノーム5分→左手正確性5分→ピアニッシモ5分→緊張弛緩3分→右手深いタッチ2分（いつもと同じセット）</span>
-                            </div>
-                        </div>
-                        <div class="tips-box">
-                            <strong>💡 Tips:</strong> 本番当日のウォームアップ。いつもと同じルーティンで『安定感』を引き出す。ここで不安を手放す
-                        </div>
-                        <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 基礎が完璧なら、本番で最高のパフォーマンスが出る
-                        </div>
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）</li>
+                            <li>✓ スラー（4分）</li>
+                            <li>✓ 和音（4分）</li>
+                            <li>✓ トレモロ（4分）</li>
+                            <li>✓ 譜読み（4分）</li>
+                        </ul>
                     </div>
 
-                    <!-- デュオ -->
+                    <!-- パッサカリア -->
                     <div class="practice-session">
                         <div class="piece-title">
-                            <span class="piece-badge badge-ranieri">ラニエリ</span>
-                            <span class="piece-badge badge-marcelli">マルチェリ</span>
-                            <span>各10分</span>
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>40分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">表現と正確性の完全融合＆本番シミュレーション</span>
+                            </div>
+                            <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">ラニエリ：『本番そのもの』で1回。マルチェリ：『本番そのもの』で1回。最後の確認</span>
+                                <span class="detail-content">本番テンポで『本番そのもの』3回→ゆっくりメトロで正確性確認1回→『3/22はこれを弾く』という最終確認</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 本番当日。『本番と同じ緊張感』で1回ずつ。完璧版固定。これで終わり
+                            <strong>💡 Tips:</strong> 金曜は『本番シミュレーションの日』。あと2日後の3/22がもう見えている。『準備は完璧』という自信を手に入れる。後は軽め
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 『準備万端。本番へ』という確信を持つ
+                            <strong>🧠 心構え:</strong> 『準備万端。3/22で最高の表現を』という確信を持つ
                         </div>
                     </div>
 
@@ -635,91 +1182,330 @@
                     <div class="practice-session">
                         <div class="piece-title">
                             <span class="piece-badge badge-song">歌と踊り</span>
-                            <span>30分（本番シミュレーション＆軽めメンテ）</span>
+                            <span>20分</span>
                         </div>
                         <div class="session-detail">
                             <div class="detail-row">
                                 <span class="detail-label">焦点:</span>
-                                <span class="detail-content">本番テンポでの本番シミュレーション＆表現力確認＆軽めメンテナンス</span>
+                                <span class="detail-content">『本番そのもの』シミュレーション＆軽め調整</span>
                             </div>
                             <div class="detail-row">
                                 <span class="detail-label">方法:</span>
-                                <span class="detail-content">暗譜で本番テンポ→『本番そのもの』で通し2回（焦点A:全体流れ確認、焦点B:音楽的グルーヴ感）→後は軽め（指ほぐし程度）。左手疲労は避けるべく短めに</span>
+                                <span class="detail-content">暗譜でメトロノーム本番テンポで『本番そのもの』2回→軽め（5分程度）→『3/21本番で最高のパフォーマンスを』という確信を持つ</span>
                             </div>
                         </div>
                         <div class="tips-box">
-                            <strong>💡 Tips:</strong> 本番当日は『やりすぎ厳禁』。本番シミュ2回で『準備完了』という確信を持つ。後は軽めに。疲労は避ける。心身を『本番へ整える』という意識で
+                            <strong>💡 Tips:</strong> 金曜は『本番シミュレーションの日』。本番と同じ緊張感で2回。後は軽め。『準備は完璧』という自信が最大の武器
                         </div>
                         <div class="mindset-box">
-                            <strong>🧠 心構え:</strong> 『準備は完璧。あとは本番で力を出すだけ』という気持ちで。焦らず、リラックスして本番へ
+                            <strong>🧠 心構え:</strong> 『準備万端。3/21本番で力を出すだけ』という気持ちで。焦らずリラックス
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め確認＆週末の休息前チェック</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番テンポで軽く1回→『今週の状態』を確認→軽め復習</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 週末休息前のチェック。『安定感』を確認して週末へ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『複数レパートリーの習慣』が『実力』に繋がる
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">全5フレーズを連続でビルドアップ</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-center">全5フレーズを連続で2回（『基本形完成』を実感）→軽め確認</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 新曲『ゴヤのマハ』の基本形が完成。週末に『次のステップ』を考える
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『毎日10分の継続』が『一週間で基本形完成』という成果に。小さな努力が大きな成果に
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>10分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">週末休息前の軽め確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回。『今週の状態』を確認</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 軽いメンテナンス。『週末へ向けた準備完了』
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『習慣の力』で複数レパートリーを成長させる
                         </div>
                     </div>
 
                     <div class="daily-message">
                         <h4>📢 金曜日のメッセージ</h4>
-                        <p><strong>本番当日です！</strong></p>
-                        <p>4日間の集中的な準備、本当にお疲れ様でした。</p>
-                        <p><strong>歌と踊り：</strong>リズム安定、後半ミスゼロ、ダイナミクスと表現力が統合された『一つの完成した作品』として完成。難曲を自分のものにした。</p>
-                        <p><strong>デュオ（ラニエリ・マルチェリ）：</strong>完璧版固定。パートナーとの信頼も完璧。</p>
-                        <p><strong>基礎ウォームアップ：</strong>4日間のルーティンで『本番仕様』が完成。メトロノーム→左手正確性→ピアニッシモ→緊張弛緩→右手深いタッチ。このセットで最高のパフォーマンスを引き出す。</p>
-                        <p><strong>本番での心構え：</strong></p>
-                        <ul style="margin-left: 20px; margin-top: 10px;">
-                            <li>リズムを感じて、グルーヴに乗る</li>
-                            <li>ダイナミクスを大げさに、表現力で聴衆を魅了</li>
-                            <li>後半も完璧に乗り切る</li>
-                            <li>『準備は完璧。焦らずリラックス』という気持ちで</li>
+                        <p><strong>1週間の集中準備、お疲れ様でした！</strong></p>
+                        <p><strong>パッサカリア：</strong>表現確定、暗譜確実、正確性強化、段階加速。『本番そのもの』で3回。3/22マスタークラスは『準備万端』。</p>
+                        <p><strong>歌と踊り：</strong>タッチ・リズム・グリッサンド・暗譜の4つを統合。『一つの完璧な作品』として完成。3/21発表会は『最高のパフォーマンス』を。</p>
+                        <p><strong>新曲『ゴヤのマハ』：</strong>毎日10分で『基本形完成』。『種から花へ』という成長を実感。次のステップへ。</p>
+                        <p><strong>BlueJeans・Tristeza：</strong>『複数レパートリーの習慣』で『実力』に繋がる。継続の力を実感。</p>
+                        <p style="margin-top: 15px;"><strong>あなたは素晴らしい準備をしてきた。</strong></p>
+                        <p><strong>3/21歌と踊り発表会＆3/22パッサカリアマスタークラス＆3月中旬BlueJeans練習会＆4月Tristeza練習会。</strong></p>
+                        <p><strong>全ての舞台で『最高の表現』を。聴衆と先生に『素晴らしい』と言わせてください。</strong></p>
+                        <p><strong>1週間本当にお疲れ様。週末で休息。また来週、最高の演奏へ。🎸✨</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 土曜 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h3>3月7日 (土)</h3>
+                    <p>📊 週末・軽めメンテナンス＆リフレッシュ | 1.5時間</p>
+                </div>
+                <div class="day-content">
+                    <!-- 基礎 -->
+                    <div class="foundational-practices">
+                        <h4>🎼 基礎練習 20分</h4>
+                        <ul>
+                            <li>✓ アルペジオ（4分）</li>
+                            <li>✓ スラー（4分）</li>
+                            <li>✓ 和音（4分）</li>
+                            <li>✓ トレモロ（4分）</li>
+                            <li>✓ 譜読み（4分）</li>
                         </ul>
-                        <p style="margin-top: 15px;"><strong>あなたは十分な準備をしてきた。本番で最高の演奏を。聴衆と先生に『素晴らしい』と言わせてください。</strong></p>
-                        <p><strong>頑張ってください。本番で会いましょう。🎸✨</strong></p>
+                    </div>
+
+                    <!-- パッサカリア -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-passacaglia">パッサカリア</span>
+                            <span>25分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め確認＆週末休息前の『状態チェック』</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">本番テンポで『本番そのもの』1回（『準備完璧』を最終確認）→軽め復習程度。疲労は避ける</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 土曜は『軽め確認の日』。1週間の成果を実感。『準備は完璧。あと1週間で3/22本番』という確信を持つ。後は軽め
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『1週間の集中準備の成果』を実感。リフレッシュして来週へ
+                        </div>
+                    </div>
+
+                    <!-- 歌と踊り -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-song">歌と踊り</span>
+                            <span>20分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-label"></span>
+                                <span class="detail-content">軽め確認＆『本番への自信』最終確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-center">暗譜でメトロノーム本番テンポで『本番そのもの』1回→軽め。『3/21本番で最高のパフォーマンス』という確信を持つ</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 土曜は『軽め確認の日』。1週間の磨きの成果を実感。『準備万端。3/21本番は最高のパフォーマンス』という自信を手に入れる
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『1週間の準備』が『3/21本番への自信』に繋がった。今週で『完璧に仕上げた』という実感を持つ
+                        </div>
+                    </div>
+
+                    <!-- BlueJeans -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-blue-jeans">BlueJeans</span>
+                            <span>15分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め確認＆『今週の状態』最終チェック</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で本番テンポで軽く1回。『3月中旬練習会へ向けた準備』を確認</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 週末軽め。『複数レパートリーの習慣』で『安定感』を確認
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『短時間で成果を出す』という効率が実力に繋がる
+                        </div>
+                    </div>
+
+                    <!-- ゴヤのマハ -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-goya">ゴヤのマハ</span>
+                            <span>5分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">『基本形完成』の最終確認</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-center">全5フレーズを軽く1回。『この1週間で基本形完成』という成長を実感</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 『毎日10分の継続』が『1週間で基本形完成』という大きな成果に。『小さな努力の力』を実感する。次のステップへ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『新曲『ゴヤのマハ』の成長』を喜び、来週からの『次のステップ』を楽しみに
+                        </div>
+                    </div>
+
+                    <!-- Tristeza -->
+                    <div class="practice-session">
+                        <div class="piece-title">
+                            <span class="piece-badge badge-tristeza">Tristeza</span>
+                            <span>5分</span>
+                        </div>
+                        <div class="session-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">焦点:</span>
+                                <span class="detail-content">軽め確認＆『複数レパートリー習慣』の実感</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">方法:</span>
+                                <span class="detail-content">暗譜で軽く1回。『毎日少しずつ』の成果を実感</span>
+                            </div>
+                        </div>
+                        <div class="tips-box">
+                            <strong>💡 Tips:</strong> 『習慣の力』で複数レパートリーが育つ。週末リフレッシュして来週へ
+                        </div>
+                        <div class="mindset-box">
+                            <strong>🧠 心構え:</strong> 『複数レパートリーの継続』が『実力の積み重ね』に繋がる
+                        </div>
+                    </div>
+
+                    <div class="daily-message">
+                        <h4>📢 土曜日のメッセージ</h4>
+                        <p><strong>1週間の集中準備、完了です！🎸✨</strong></p>
+                        <p><strong>この7日間で、あなたは素晴らしい成果を出しました：</strong></p>
+                        <p>✓ パッサカリア：表現・暗譜・正確性を完成させ、3/22マスタークラスは『準備万端』<br>
+                        ✓ 歌と踊り：4つの焦点を統合し、3/21発表会は『完璧に仕上げた』<br>
+                        ✓ ゴヤのマハ：毎日10分で『基本形完成』。新曲の『成長の喜び』を実感<br>
+                        ✓ BlueJeans・Tristeza：『複数レパートリーの習慣』で『安定感』を確認</p>
+                        <p style="margin-top: 15px;"><strong>来週から最終準備へ。3/21歌と踊り発表会＆3/22パッサカリアマスタークラスの『最高の舞台』が待っています。</strong></p>
+                        <p><strong>週末でしっかり休息。心身をリフレッシュして、来週また最高の演奏へ。</strong></p>
+                        <p><strong>本当にお疲れ様でした。素晴らしい1週間でした。🎸✨</strong></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 4日間の総括 -->
+        <!-- 1週間の総括 -->
         <div class="weekly-summary">
-            <h2>🏆 この4日間について ─ 28日本番への最終仕上げ</h2>
+            <h2>🏆 この1週間について ─ 3/21発表会＆3/22マスタークラスへ向けて</h2>
             <p><strong>配分方針</strong></p>
-            <p>ソロ「歌と踊り」を重点（火水木20分、金30分へ段階増）。不安の3つを順序立てて排除：火曜『リズム基盤』→水曜『後半ミスゼロ』→木曜『ダイナミクス統合』→金曜『本番シミュレーション』。デュオは毎日20分（各10分）で完璧版を維持。基礎20分は『本番仕様ウォームアップ』として毎日実施。</p>
+            <p>基礎20分（毎日必須：アルペジオ・スラー・和音・トレモロ・譜読み）→パッサカリア40分（3つの課題：表現・暗譜・正確性）→歌と踊り20分（4つの焦点：タッチ・リズム・グリッサンド・暗譜）→BlueJeans20分（復習・安定化）→ゴヤのマハ10分（毎日1フレーズペース）→Tristeza10分（軽め復習）</p>
             
-            <p style="margin-top: 20px;"><strong>歌と踊りの戦略</strong></p>
-            <p>✓ <strong>火曜『リズムの日』：</strong>本番-10%でリズム不安箇所連続ミスゼロ＆最後まで乗り切る耐久テスト<br>
-            ✓ <strong>水曜『後半ミスゼロの日』：</strong>後半セクション連続ミスゼロ達成＆本番-5%へテンポアップ<br>
-            ✓ <strong>木曜『ダイナミクス統合の日』：</strong>ダイナミクス・対旋律・和音バリエーション全て統合<br>
-            ✓ <strong>金曜『本番シミュ＋軽めメンテ』：</strong>本番テンポで2回通し。後は軽めに＆心身を整える</p>
+            <p style="margin-top: 20px;"><strong>パッサカリアの3つの課題（40分/日）</strong></p>
+            <p>✓ <strong>日曜『探索の日』：</strong>暗譜復習→表現試験的3パターン→ど忘れ箇所発見<br>
+            ✓ <strong>月曜『暗譜対策の日』：</strong>ど忘れ箇所を脳に叩き込む→確実暗譜<br>
+            ✓ <strong>火曜『表現確定の日』：</strong>3パターンから『最高の1つ』選定→バロック感・フレーズ弧確立<br>
+            ✓ <strong>水曜『正確性強化の日』：</strong>ゆっくりメトロでミスタッチゼロ化→段階的テンポ上げの基盤<br>
+            ✓ <strong>木曜『段階加速の日』：</strong>遅い→速いへ段階加速→3/22本番シミュレーション完成<br>
+            ✓ <strong>金曜『本番シミュレーション：』</strong>『本番そのもの』3回→『準備完璧』確信<br>
+            ✓ <strong>土曜『軽め確認の日』：</strong>『本番そのもの』1回→1週間の成果実感</p>
 
-            <p style="margin-top: 20px;"><strong>デュオの戦略</strong></p>
-            <p>✓ <strong>毎日20分：</strong>ラニエリ10分+マルチェリ10分<br>
-            ✓ <strong>完璧版固定：</strong>28日は『これを弾く』。変化させない<br>
-            ✓ <strong>本番前日・本番当日：</strong>『本番そのもの』で1回ずつ＆最終確認</p>
+            <p style="margin-top: 20px;"><strong>歌と踊りの4つの焦点（20分/日、毎回実施）</strong></p>
+            <p>✓ <strong>タッチ改善：</strong>音をはっきり発音（週1-2回重点）<br>
+            ✓ <strong>リズム安定：</strong>オンタイムを徹底（週1-2回重点）<br>
+            ✓ <strong>グリッサンド：</strong>きっちり発音（週1-2回重点）<br>
+            ✓ <strong>暗譜復習：</strong>ど忘れ防止（週1-2回重点）<br>
+            ✓ <strong>木曜『統合の日』：</strong>4つ全てを『一つの完璧な作品』に<br>
+            ✓ <strong>結果：</strong>3/21発表会『完璧に仕上げた』という自信を手に入れる</p>
 
-            <p style="margin-top: 20px;"><strong>本番仕様基礎20分（毎日）</strong></p>
-            <p>✓ メトロノーム5分（リズム予感）<br>
-            ✓ 左手正確性5分（隣弦タッチゼロ）<br>
-            ✓ ピアニッシモ5分（響く弱音）<br>
-            ✓ 緊張弛緩3分（フレーズ弧）<br>
-            ✓ 右手深いタッチ2分（弦掴み）<br>
-            <strong>→ ルーティン化で『本番仕様ウォームアップ』完成</strong></p>
+            <p style="margin-top: 20px;"><strong>新曲『ゴヤのマハ』の進度（10分/日）</strong></p>
+            <p>✓ <strong>毎日1フレーズペース：</strong>日曜1F→月曜2F→火曜3F→水曜4F→木曜5F<br>
+            ✓ <strong>『基本形完成』が目標：</strong>週末に『全5フレーズ』が確立<br>
+            ✓ <strong>次のステップ：</strong>来週から『テンポアップ・表現模索』へ</p>
+
+            <p style="margin-top: 20px;"><strong>基礎20分（毎日必須）</strong></p>
+            <p>✓ アルペジオ（4分） - 右手の流動性<br>
+            ✓ スラー（4分） - 左手の正確性＆スピード<br>
+            ✓ 和音（4分） - 左手の厚み<br>
+            ✓ トレモロ（4分） - 右手の均等性<br>
+            ✓ 譜読み（4分） - スケール・新曲対応<br>
+            <strong>→ 技術基盤の安定＆全曲の質向上</strong></p>
+
+            <p style="margin-top: 20px;"><strong>複数レパートリーの効率化（BlueJeans・Tristeza）</strong></p>
+            <p>✓ BlueJeans：20分（復習→安定化→3月中旬練習会へ向けた準備）<br>
+            ✓ Tristeza：10分（軽め復習→継続維持→4月練習会へ向けた準備）<br>
+            ✓ 『毎日少しずつ』で『複数レパートリーの習慣』が『実力』に繋がる</p>
 
             <p style="margin-top: 20px;"><strong>成功のカギ</strong></p>
-            <p>✓ 4日間で『歌と踊り』の不安を順序立てて排除<br>
-            ✓ テンポ段階加速（本番-10%→-5%→本番）で自信構築<br>
-            ✓ 本番前日・当日は『やりすぎ厳禁』。軽めメンテナンスで疲労回避<br>
-            ✓ 基礎20分のルーティン化で『本番での力の引き出し』を確実に<br>
-            ✓ 本番直前『焦らずリラックス』という心持ちで、最高のパフォーマンスを</p>
+            <p>✓ パッサカリア：3つの課題を『1日1テーマ』で順序立てて深掘り<br>
+            ✓ 歌と踊り：4つの焦点を毎回『ぐるぐる回す』ことで『完璧に統合』<br>
+            ✓ ゴヤのマハ：『毎日10分』で『1週間で基本形完成』という成功体験<br>
+            ✓ 基礎：『毎日必須』で『技術基盤の安定』を確立<br>
+            ✓ 複数レパートリー：『毎日少しずつ』で『習慣が実力に』</p>
 
             <p style="margin-top: 20px;"><strong>あなたへのメッセージ</strong></p>
-            <p><strong>4日間の集中的な準備で、あなたは絶対に準備できます。</strong></p>
-            <p>火曜『リズム基盤』→水曜『後半ミスゼロ』→木曜『ダイナミクス統合』→金曜『本番シミュレーション』</p>
-            <p>このステップバイステップで、不安を一つずつ排除し、『難曲も完成した作品』として完成させます。</p>
-            <p>本番では『準備は完璧。あとは力を出すだけ』という気持ちで、聴衆と先生に『素晴らしい』と言わせてください。</p>
-            <p><strong>デュオも完璧。基礎ウォームアップも完璧。歌と踊りも完璧に仕上げる。</strong></p>
-            <p><strong>あなたなら絶対できます。本番で最高のパフォーマンスを。一緒に頑張ろう。🎸✨</strong></p>
+            <p><strong>1週間の集中準備で、あなたは確実に成長します。</strong></p>
+            <p>パッサカリア3つの課題を『1日1テーマ』で深掘りすることで、3/22マスタークラスは『表現・暗譜・正確性』の全てが完成。</p>
+            <p>歌と踊りの4つの焦点を毎回『ぐるぐる回す』ことで、3/21発表会は『完璧に仕上げた』という自信を手に入れる。</p>
+            <p>ゴヤのマハは『毎日10分』で『1週間で基本形完成』という小さな成功体験が、レパートリー拡大への大きな自信に繋がる。</p>
+            <p>基礎『毎日必須』で『技術基盤の安定』を確立。複数レパートリー『毎日少しずつ』で『習慣が実力に』。</p>
+            <p><strong>時間を大切に、丁寧に。効率的に複数曲を進める『プロの練習体験』ができます。</strong></p>
+            <p><strong>あなたなら絶対できます。3/21歌と踊り発表会＆3/22パッサカリアマスタークラスで『最高の表現』を。一緒に頑張ろう。🎸✨</strong></p>
         </div>
 
         <div class="time-info" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--color-border);">
-            <p>毎日のルーティン（基礎20分）が『本番での力の引き出し装置』です。本番当日まで、このセットを完璧に。</p>
-            <p style="margin-top: 10px; color: #7c3aed; font-weight: 600;">本番で会いましょう。最高の演奏を。🎸</p>
+            <p>基礎20分（毎日必須）が『全曲の質向上』の基盤。パッサカリア・歌と踊り・新曲を『効率的に同時進行』。</p>
+            <p style="margin-top: 10px; color: #dc2626; font-weight: 600;">3/21発表会＆3/22マスタークラスで『最高のパフォーマンス』を。🎸✨</p>
         </div>
     </div>
 </body>
