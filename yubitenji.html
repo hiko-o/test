@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>指点字練習アプリ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --highlight: #38bdf8;
+            --circle-color: #cbd5e1;
+            --circle-active: #38bdf8;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, var(--bg-color), #1e293b);
+            color: var(--text-main);
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 4rem 6rem;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .character-display {
+            font-size: 10rem;
+            font-weight: 700;
+            height: 1.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-main);
+            text-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 3rem;
+        }
+
+        .character-display.fade {
+            opacity: 0.4;
+            transform: scale(0.95);
+        }
+
+        .indicators {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .circles-row {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .circle-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .circle {
+            font-size: 3.5rem;
+            line-height: 1;
+            color: var(--circle-color);
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle.active {
+            color: var(--circle-active);
+            transform: scale(1.15);
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        }
+
+        .key-label {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .instructions {
+            margin-top: 3rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+            text-align: center;
+            max-width: 450px;
+            line-height: 1.6;
+        }
+
+        .instructions span {
+            color: var(--circle-color);
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        .controls {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--circle-color);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--circle-active);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .toggle-label {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">指点字練習アプリ</div>
+    <div class="character-display" id="charDisplay">　</div>
+    
+    <div class="indicators">
+        <div class="circles-row">
+            <!-- 左手 -->
+            <div class="circle-wrapper">
+                <div class="circle" id="circle-S">〇</div>
+                <div class="key-label">S</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle" id="circle-D">〇</div>
+                <div class="key-label">D</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle" id="circle-F">〇</div>
+                <div class="key-label">F</div>
+            </div>
+            <!-- 右手 (間隔をあける) -->
+            <div class="circle-wrapper" style="margin-left: 2rem;">
+                <div class="circle" id="circle-J">〇</div>
+                <div class="key-label">J</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle" id="circle-K">〇</div>
+                <div class="key-label">K</div>
+            </div>
+            <div class="circle-wrapper">
+                <div class="circle" id="circle-L">〇</div>
+                <div class="key-label">L</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <span class="toggle-label">音声読み上げ</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="soundToggle" checked>
+            <span class="slider"></span>
+        </label>
+    </div>
+</div>
+
+<div class="instructions">
+    キーボードの <span>S</span> <span>D</span> <span>F</span> <span>J</span> <span>K</span> <span>L</span> を使って指点字を入力します。<br>
+    ※ 300ミリ秒以内の同時押しに対応しています。
+</div>
+
+<script>
+    const KEY_BITS = { S: 5, D: 4, F: 3, J: 2, K: 1, L: 0 };
+    const KEY_TIMEOUT = 300; // 同時押しタイムアウト(ミリ秒)
+
+    const BRAILLE_MAP = {
+        '001000': 'あ', '011000': 'い', '001100': 'う', '011100': 'え', '010100': 'お',
+        '001001': 'か', '011001': 'き', '001101': 'く', '011101': 'け', '010101': 'こ',
+        '001011': 'さ', '011011': 'し', '001111': 'す', '011111': 'せ', '010111': 'そ',
+        '101010': 'た', '111010': 'ち', '101110': 'つ', '111110': 'て', '110110': 'と',
+        '101000': 'な', '111000': 'に', '101100': 'ぬ', '111100': 'ね', '110100': 'の',
+        '101001': 'は', '111001': 'ひ', '101101': 'ふ', '111101': 'へ', '110101': 'ほ',
+        '101011': 'ま', '111011': 'み', '101111': 'む', '111111': 'め', '110111': 'も',
+        '100100': 'や', '100101': 'ゆ', '100110': 'よ', 
+        '001010': 'ら', '011010': 'り', '001110': 'る', '011110': 'れ', '010110': 'ろ',
+        '100000': 'わ', '100010': 'を', '100011': 'ん'
+    };
+
+    let currentBits = 0;
+    let timer = null;
+    let isWaiting = false;
+
+    const charDisplay = document.getElementById('charDisplay');
+    const getCircle = (key) => document.getElementById(`circle-${key}`);
+    const soundToggle = document.getElementById('soundToggle');
+
+    function speakCharacter(char) {
+        if (!soundToggle.checked) return;
+        
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(char);
+            utterance.lang = 'ja-JP';
+            // 読み上げ速度やピッチの調整（お好みで変更可能）
+            // utterance.rate = 1.0; 
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function updateCirclesState() {
+        ['S', 'D', 'F', 'J', 'K', 'L'].forEach(key => {
+            const bit = KEY_BITS[key];
+            const isSet = (currentBits & (1 << bit)) !== 0;
+            const el = getCircle(key);
+            if (isSet) {
+                el.classList.add('active');
+                el.textContent = '●';
+            } else {
+                el.classList.remove('active');
+                el.textContent = '〇';
+            }
+        });
+    }
+
+    function evaluateInput() {
+        const bitString = currentBits.toString(2).padStart(6, '0');
+        const character = BRAILLE_MAP[bitString];
+        
+        charDisplay.classList.remove('fade');
+        if (character) {
+            charDisplay.textContent = character;
+            speakCharacter(character);
+        } else if (currentBits !== 0) {
+            charDisplay.textContent = '？'; // 未定義の組み合わせ
+        } else {
+            charDisplay.textContent = '　';
+        }
+        
+        isWaiting = false;
+        timer = null;
+        // 次の入力が始まるまで 〇と●の表示状態を維持して、使用者が確認できるようにする
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.repeat) return; // 押しっぱなしによる連続入力は無視
+
+        const key = e.key.toUpperCase();
+        if (KEY_BITS[key] !== undefined) {
+            if (!isWaiting) {
+                // 初回のキーイベントでタイマースタート
+                isWaiting = true;
+                currentBits = 0; // 前回の入力をリセット
+                
+                // 次の文字入力開始のフィードバック
+                charDisplay.classList.add('fade');
+                
+                timer = setTimeout(() => {
+                    evaluateInput();
+                }, KEY_TIMEOUT);
+            }
+            
+            // ビット演算でキーの状態を保持
+            currentBits |= (1 << KEY_BITS[key]);
+            updateCirclesState();
+        }
+    });
+
+    // 初期化
+    updateCirclesState();
+</script>
+
+</body>
+</html>
